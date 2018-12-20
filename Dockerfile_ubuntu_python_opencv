@@ -13,5 +13,5 @@ RUN apt-get install -y poppler-utils \
       && apt-get clean -y \
       && apt-get autoremove -y
 
-# dont write python byte code , to intergrate with gitlab CI with docker-compose
+# dont write python byte code , to intergrate gitlab CI with docker-compose
 ENV PYTHONDONTWRITEBYTECODE=1
