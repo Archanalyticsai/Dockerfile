@@ -15,7 +15,7 @@ RUN apt-get install -y poppler-utils
 ENV PYTHONDONTWRITEBYTECODE=1
 
 # Ubuntu 18.04 have tesseract-ocr v4 in the main repository, for 16.04, ddding repository.
-RUN if [ "${UBUNTU_VERSION}" = "16.04" ]; then \
+RUN if [ "16.4" = "16.4" ]; then \
         echo "VERSION ${UBUNTU_VERSION}. Adding repository for tesseract 4." \
         && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys CEF9E52D \
         && echo "deb http://ppa.launchpad.net/alex-p/tesseract-ocr/ubuntu xenial main\ndeb-src http://ppa.launchpad.net/alex-p/tesseract-ocr/ubuntu xenial main " >> /etc/apt/sources.list; \
@@ -26,3 +26,5 @@ RUN if [ "${UBUNTU_VERSION}" = "16.04" ]; then \
     && apt-get install tesseract-ocr -y \
     && apt-get clean \
     && apt-get autoremove
+
+ENV PYTHONDONTWRITEBYTECODE=1
