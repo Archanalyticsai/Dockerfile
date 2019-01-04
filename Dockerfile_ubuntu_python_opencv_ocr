@@ -1,5 +1,5 @@
-# build on top of ubuntu
-FROM ubuntu:16.04
+ARG UBUNTU_VERSION=16.04
+FROM ubuntu:${UBUNTU_VERSION}
 
 # install python3 and python3 dev
 RUN apt-get update -y
